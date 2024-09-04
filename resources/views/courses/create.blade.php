@@ -4,7 +4,7 @@
 <div class="card">
     <div class="card-header">Courses Page</div>
     <div class="card-body">
-        <form action="{{ url('courses') }}" method="post">
+        <form action="{{ url('course') }}" method="post">
             {!! csrf_field() !!}
             <label>Name</label></br>
             <input type="text" name="name" id="name" class="form-control"></br>

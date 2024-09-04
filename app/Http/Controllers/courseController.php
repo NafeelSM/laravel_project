@@ -27,11 +27,11 @@ class courseController extends Controller
      * Store a newly created resource in storage.
      */
     /**Store function */
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request)
     {
         $input = $request->all();
         course::create($input);
-        return redirect('courses')->with('flash_message', 'Course Addedd!');
+        return redirect('course')->with('flash_message', 'Course Added!');
     }
 
     /**
@@ -55,12 +55,12 @@ class courseController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id): RedirectResponse
+    public function update(Request $request, string $id)
     {
         $courses = course::find($id);
         $input = $request->all();
         $courses->update($input);
-        return redirect('courses')->with('flash_message', 'Courses Updated!');
+        return redirect('course')->with('flash_message', 'Courses Updated!');
     }
 
     /**
@@ -69,6 +69,6 @@ class courseController extends Controller
     public function destroy(string $id)
     {
         course::destroy($id);
-        return redirect('courses')->with('flash_message', 'Course Deleted!');
+        return redirect('course')->with('flash_message', 'Course Deleted!');
     }
 }

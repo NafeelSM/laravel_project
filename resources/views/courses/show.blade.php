@@ -2,13 +2,13 @@
 @section('content')
 
 <div class="card">
-    <div class="card-header">Student Page</div>
+    <div class="card-header">Course Page</div>
     <div class="card-body">
 
         <div class="card-body">
-        <h5 class="card-title">Name : {{ $students->name}}</h5>
-        <p class="card-text">Address : {{ $students->address}}</p>
-        <p class="card-text">Mobile : {{ $students->mobile}}</p>
+        <h5 class="card-title">Name : {{ $courses->name}}</h5>
+        <p class="card-text">Syllebus : {{ $courses->syllebus}}</p>
+        <p class="card-text">Duration : {{ $courses->duration}}</p>
         </div>
 
         </hr>
