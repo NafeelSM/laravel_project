@@ -20,7 +20,7 @@ class BatchController extends Controller
      * Show the form for creating a new resource.
      */
     /**Create function */
-    public function create()
+    public function create(): View
     {
         return view('batches.create');
     }
@@ -29,7 +29,7 @@ class BatchController extends Controller
      * Store a newly created resource in storage.
      */
     /**Store function */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
         $input = $request->all();
         Batch::create($input);
@@ -41,8 +41,8 @@ class BatchController extends Controller
      */
     public function show(string $id): View
     {
-        $courses = course::find($id);
-        return view('courses.show')->with('courses', $courses);
+        $batches = Batch::find($id);
+        return view('batches.show')->with('batches', $batches);
     }
 
     /**
@@ -50,19 +50,19 @@ class BatchController extends Controller
      */
     public function edit(string $id): View
     {
-        $courses = course::find($id);
-        return view('courses.edit')->with('courses', $courses);
+        $batches = Batch::find($id);
+        return view('batches.edit')->with('batches', $batches);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, string $id): RedirectResponse
     {
-        $courses = course::find($id);
+        $batches = course::find($id);
         $input = $request->all();
-        $courses->update($input);
-        return redirect('course')->with('flash_message', 'Courses Updated!');
+        $batches->update($input);
+        return redirect('batch')->with('flash_message', 'Batch Updated!');
     }
 
     /**
@@ -70,7 +70,7 @@ class BatchController extends Controller
      */
     public function destroy(string $id)
     {
-        course::destroy($id);
-        return redirect('course')->with('flash_message', 'Course Deleted!');
+        Batch::destroy($id);
+        return redirect('batch')->with('flash_message', 'Batch Deleted!');
     }
 }
