@@ -4,20 +4,20 @@
     <div class="card-header">Edit Page</div>
     <div class="card-body">
 
-        <form action="{{ url('course/' . $courses->id) }}" method="post">
+        <form action="{{ url('batches/' . $batches->id) }}" method="post">
             {!! csrf_field() !!}
             @method("PATCH")
 
-            <input type="hidden" name="id" id="id" value="{{$courses->id}}" id="id" />
+            <input type="hidden" name="id" id="id" value="{{$batches->id}}" id="id" />
 
             <label>Name</label><br>
-            <input type="text" name="name" id="name" value="{{$courses->name}}" class="form-control"><br>
+            <input type="text" name="name" id="name" value="{{$batches->name}}" class="form-control"><br>
 
             <label>Syllebus</label><br>
-            <input type="text" name="syllebus" id="syllebus" value="{{$courses->syllebus}}" class="form-control"><br>
+            <input type="text" name="syllebus" id="course_id" value="{{$batches->course_id}}" class="form-control"><br>
 
             <label>Duration</label><br>
-            <input type="text" name="duration" id="duration" value="{{$courses->duration}}" class="form-control"><br>
+            <input type="text" name="duration" id="start_date" value="{{$batches->start_date}}" class="form-control"><br>
 
             <input type="submit" value="Update" class="btn btn-success"><br>
         </form>
